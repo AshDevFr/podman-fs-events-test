@@ -6,6 +6,6 @@ RUN apk update && \
 
 WORKDIR /app
 
-COPY web/package.json web/package-lock.json /app/
+COPY package.json package-lock.json /app/
 
 RUN npm install
