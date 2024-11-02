@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./web/public:/app/public
+      - ./web/src:/app/src
+      - ./web/eslint.config.js:/app/eslint.config.js
+      - ./web/index.html:/app/index.html
+      - ./web/package.json:/app/package.json
+      - ./web/package-lock.json:/app/package-lock.json
+      - ./web/vite.config.js:/app/vite.config.js
+      - frontend-home:/root/
+
+volumes:
+  frontend-home:
